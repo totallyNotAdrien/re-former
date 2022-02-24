@@ -14,35 +14,16 @@
   <input type="submit" value="Submit">
 </form> -->
 
-<% comment do %>
-  <%= form_tag('/users', method: 'post') do %>
-    <%= label_tag('username', 'Username:') %><br>
-    <%= text_field_tag('username')%><br>
-    <%= label_tag('email', 'Email Address:') %><br>
-    <%= email_field_tag('email')%><br>
-    <%= label_tag('password', 'Password:') %><br>
-    <%= password_field_tag('password')%><br><br>
-    
-    <%= submit_tag('Submit')%>
-  <% end %>
-<% end %>
+<%# form_tag('/users', method: 'post') do %>
+  <%# label_tag('username', 'Username:') %>
+  <%# text_field_tag('username')%>
+  <%# label_tag('email', 'Email Address:') %>
+  <%# email_field_tag('email')%>
+  <%# label_tag('password', 'Password:') %>
+  <%# password_field_tag('password')%>
+  
+  <%# submit_tag('Submit')%>
+<%# end %>
 
 
-<%= form_with model: @user do |f|%>
-<p>
-  <%= f.label :username, "Username:" %><br>
-  <%= f.text_field :username, placeholder: "milkyboi123" %>
-</p>
-<p>
-  <%= f.label :email, "Email Address:" %><br>
-  <%= f.email_field :email, placeholder: "milk@yboi.com" %>
-</p>
-<p>
-  <%= f.label :password, "Password:" %><br>
-  <%= f.password_field :username %>
-</p>
-<p>
-  <%= f.submit %>
-</p>
-
-<% end %>
+<%= render 'form', user: @user %>

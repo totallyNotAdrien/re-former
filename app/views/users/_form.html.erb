@@ -1,0 +1,30 @@
+<%= form_with model: user do |f|%>
+<p>
+  <%= f.label :username, "Username:" %><br>
+  <%= f.text_field :username, placeholder: "milkyboi123" %> <br>
+  <% user.errors.full_messages_for(:username).each do |error|%>
+    <div><%= error %></div>
+  <% end %>
+</p>
+
+<p>
+  <%= f.label :email, "Email Address:" %><br>
+  <%= f.email_field :email, placeholder: "milk@yboi.com" %> <br>
+  <% user.errors.full_messages_for(:email).each do |error|%>
+    <div><%= error %></div>
+  <% end %>
+</p>
+
+<p>
+  <%= f.label :password, "Password:" %><br>
+  <%= f.password_field :password %> <br>
+  <% user.errors.full_messages_for(:password).each do |error|%>
+    <div><%= error %></div>
+  <% end %>
+</p>
+
+<p>
+  <%= f.submit %>
+</p>
+
+<% end %>
